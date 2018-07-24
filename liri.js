@@ -62,14 +62,14 @@ else if(action === undefined)
 
 // function that displays all twits
 function twit(){
-    var client = new Twitter(keys.twitter);
+    // var client = new Twitter(keys.twitter);
 
-//     var client = new Twitter({
-//   consumer_key: 'RX22fGSVYCkOHPdQxOJ3w4XmT',
-//   consumer_secret: 'yPZes4fDqGgjic1HlCpK2SPtXK9t2gs6NtHtRCEwRXvK86GBME',
-//   access_token_key: '1020288637345456128-8lZJ2lU5UsgRMvLMLF1lWZIlUxVDdP',
-//   access_token_secret: 'EqzNbYhXkINGds0MeF4R6wIcNU2cuPe87rXud07sm1T8l'
-// });
+    var client = new Twitter({
+  consumer_key: 'RX22fGSVYCkOHPdQxOJ3w4XmT',
+  consumer_secret: 'yPZes4fDqGgjic1HlCpK2SPtXK9t2gs6NtHtRCEwRXvK86GBME',
+  access_token_key: '1020288637345456128-8lZJ2lU5UsgRMvLMLF1lWZIlUxVDdP',
+  access_token_secret: 'EqzNbYhXkINGds0MeF4R6wIcNU2cuPe87rXud07sm1T8l'
+});
  
 // query of npm package
 var params = {screen_name: 'nodejs'};
@@ -93,12 +93,12 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
 // displays song details
 function spotifysong(song){
 
-  var spotify = new Spotify(keys.spotify);
+//   var spotify = new Spotify(keys.spotify);
  
-// var spotify = new Spotify({
-//   id: "d1a97a841ded41ceb07288601cf27dac",
-//   secret: "12df6cea336d4147bff130787ce85153"
-// });
+var spotify = new Spotify({
+  id: "d1a97a841ded41ceb07288601cf27dac",
+  secret: "12df6cea336d4147bff130787ce85153"
+});
 //  query of npm package spotify
 spotify.search({ type: 'track', query: song}, function(err, data) {
   if (err) {
